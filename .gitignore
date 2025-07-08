@@ -1,0 +1,50 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Test results
+TestResults/
+
+# Logs
+*.log
+
+# Others
+*.swp
+*.tmp
+
+# Dotnet tools
+/.tools/
+
+# Local environment
+.env
+
+# Backup files
+*~
+
+# Cursor
+.cursor/
+
+# Others
+*.bak 

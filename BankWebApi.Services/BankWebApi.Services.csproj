@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankWebApi.Connections\BankWebApi.Connections.csproj" />
+    <ProjectReference Include="..\BankWebApi.Models\BankWebApi.Models.csproj" />
+  </ItemGroup>
+
+</Project>
