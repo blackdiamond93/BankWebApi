@@ -17,7 +17,7 @@ BankWebApi es una API RESTful desarrollada en .NET 8 que simula las operaciones 
 ## Pasos para correr el proyecto
 1. **Clona el repositorio y navega a la carpeta del proyecto:**
    ```sh
-   git clone <url-del-repo>
+   git clone https://github.com/blackdiamond93/BankWebApi.git
    cd BankWebApi/BankWebApi
    ```
 2. **Restaura los paquetes NuGet:**
