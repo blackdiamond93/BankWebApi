@@ -11,5 +11,7 @@ namespace BankWebApi.Services.Services
     public interface ICustomerServices
     {
         Task<Client> CreateCustomerAsync(CreateCustomerDto dto);
+        Task<Client?> GetCustomerByIdAsync(int id);
+        Task<bool> CustomerExistsAsync(int customerId);
     }
 }

@@ -1,10 +1,8 @@
 using BankWebApi.Connections.Data;
 using BankWebApi.Connections.Models;
-using BankWebApi.Models;
 using BankWebApi.Models.DTOs;
 using BankWebApi.Services.Services;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 
 namespace BankWebApi.Testing
 {

@@ -1,6 +1,8 @@
 ﻿using BankWebApi.Models.DTOs;
 using BankWebApi.Services.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using BankWebApi.Models;
 
 namespace BankWebApi.Api.Controllers
 {
@@ -17,24 +19,39 @@ namespace BankWebApi.Api.Controllers
             _transactionServices = transactionServices;
         }
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterTransaction([FromBody] RegisterTransactionDto transactionDto)
+        public async Task<IActionResult> RegisterTransaction([FromBody] JsonElement transactionDtoJson)
         {
-            if (transactionDto == null)
-            {
-                return BadRequest("Transaction data is null.");
-            }
+            if (!transactionDtoJson.TryGetProperty("accountNumber", out var accNumProp) || string.IsNullOrWhiteSpace(accNumProp.GetString()))
+                return BadRequest("AccountNumber is required.");
+            if (!transactionDtoJson.TryGetProperty("transactionType", out var typeProp) || string.IsNullOrWhiteSpace(typeProp.GetString()))
+                return BadRequest("TransactionType is required.");
+            if (!transactionDtoJson.TryGetProperty("amount", out var amountProp) || !amountProp.TryGetDecimal(out var amount) || amount <= 0)
+                return BadRequest("Amount must be a positive decimal.");
+
+            var accountNumber = accNumProp.GetString();
+            var transactionTypeStr = typeProp.GetString();
+            if (!Enum.TryParse<TransactionType>(transactionTypeStr, true, out var transactionType))
+                return BadRequest($"TransactionType '{transactionTypeStr}' is invalid.");
+
             try
             {
                 var result = await _transactionServices.RegisterTransactionAsync(
-                    transactionDto.AccountNumber,
-                    transactionDto.TransactionType,
-                    transactionDto.Amount);
+                    accountNumber,
+                    transactionType,
+                    amount);
                 return CreatedAtAction(nameof(RegisterTransaction), new { id = result.Id }, result);
             }
             catch (InvalidOperationException ex)
             {
-                _logger.LogError(ex, "Insufficient funds for account {AccountNumber}", transactionDto.AccountNumber);
-                return BadRequest("Insufficient funds for this transaction.");
+                if (ex.Message.Contains("fondos", StringComparison.OrdinalIgnoreCase) || ex.Message.Contains("insufficient", StringComparison.OrdinalIgnoreCase))
+                {
+                    return UnprocessableEntity("Insufficient funds for this transaction.");
+                }
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound("Account not found.");
             }
             catch (Exception ex)
             {
@@ -93,3 +110,4 @@ namespace BankWebApi.Api.Controllers
         }
     }
 }
+

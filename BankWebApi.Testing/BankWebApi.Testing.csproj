@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -11,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.17" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Moq" Version="4.20.72" />
@@ -21,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BankWebApi.Connections\BankWebApi.Connections.csproj" />
     <ProjectReference Include="..\BankWebApi.Services\BankWebApi.Services.csproj" />
+    <ProjectReference Include="..\BankWebApi\BankWebApi.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>

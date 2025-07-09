@@ -1,6 +1,7 @@
 ﻿using BankWebApi.Connections.Data;
 using BankWebApi.Connections.Models;
 using BankWebApi.Models.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace BankWebApi.Services.Services
 {
@@ -18,11 +19,19 @@ namespace BankWebApi.Services.Services
                 Gender = dto.Gender,
                 Income = dto.Income
             };
-
             _context.Clients.Add(customer);
             await _context.SaveChangesAsync();
-
             return customer;
+        }
+
+        public async Task<Client?> GetCustomerByIdAsync(int id)
+        {
+            return await _context.Clients.FindAsync(id);
+        }
+
+        public async Task<bool> CustomerExistsAsync(int customerId)
+        {
+            return await _context.Clients.AnyAsync(c => c.Id == customerId);
         }
     }
 }

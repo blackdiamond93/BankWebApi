@@ -4,13 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// Registering the DbContext with dependency injection
 builder.Services.AddDbContext<BankDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -38,3 +34,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+
+namespace BankWebApi.Api
+{
+    public partial class Program { }
+}
