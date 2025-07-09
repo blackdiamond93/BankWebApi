@@ -19,27 +19,28 @@ namespace BankWebApi.Api.Controllers
             _transactionServices = transactionServices;
         }
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterTransaction([FromBody] JsonElement transactionDtoJson)
+        public async Task<IActionResult> RegisterTransaction([FromBody] RegisterTransactionDto dto)
         {
-            if (!transactionDtoJson.TryGetProperty("accountNumber", out var accNumProp) || string.IsNullOrWhiteSpace(accNumProp.GetString()))
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            if (string.IsNullOrWhiteSpace(dto.AccountNumber))
                 return BadRequest("AccountNumber is required.");
-            if (!transactionDtoJson.TryGetProperty("transactionType", out var typeProp) || string.IsNullOrWhiteSpace(typeProp.GetString()))
-                return BadRequest("TransactionType is required.");
-            if (!transactionDtoJson.TryGetProperty("amount", out var amountProp) || !amountProp.TryGetDecimal(out var amount) || amount <= 0)
+            if (dto.Amount <= 0)
                 return BadRequest("Amount must be a positive decimal.");
-
-            var accountNumber = accNumProp.GetString();
-            var transactionTypeStr = typeProp.GetString();
-            if (!Enum.TryParse<TransactionType>(transactionTypeStr, true, out var transactionType))
-                return BadRequest($"TransactionType '{transactionTypeStr}' is invalid.");
-
             try
             {
                 var result = await _transactionServices.RegisterTransactionAsync(
-                    accountNumber,
-                    transactionType,
-                    amount);
-                return CreatedAtAction(nameof(RegisterTransaction), new { id = result.Id }, result);
+                    dto.AccountNumber,
+                    dto.TransactionType,
+                    dto.Amount);
+                var response = new {
+                    id = result.Id,
+                    result.TransactionType,
+                    result.Amount,
+                    result.BalanceAfterTransaction,
+                    result.TransactionDate
+                };
+                return CreatedAtAction(nameof(RegisterTransaction), new { id = result.Id }, response);
             }
             catch (InvalidOperationException ex)
             {

@@ -19,30 +19,15 @@ namespace BankWebApi.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCustomer([FromBody] JsonElement customerJson)
+        public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerDto dto)
         {
-            if (!customerJson.TryGetProperty("name", out var nameProp) || string.IsNullOrWhiteSpace(nameProp.GetString()))
-                return BadRequest("Name is required.");
-            if (!customerJson.TryGetProperty("dateOfBirth", out var dobProp) || dobProp.ValueKind != JsonValueKind.String)
-                return BadRequest("DateOfBirth is required.");
-            if (!DateTime.TryParse(dobProp.GetString(), out var dateOfBirth))
-                return BadRequest("DateOfBirth must be a valid date.");
-            if (!customerJson.TryGetProperty("gender", out var genderProp) || string.IsNullOrWhiteSpace(genderProp.GetString()))
-                return BadRequest("Gender is required.");
-            if (!customerJson.TryGetProperty("income", out var incomeProp) || !incomeProp.TryGetDecimal(out var income) || income < 0)
-                return BadRequest("Income must be a non-negative decimal.");
-
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
-                var dto = new CreateCustomerDto
-                {
-                    Name = nameProp.GetString(),
-                    DateOfBirth = dateOfBirth,
-                    Gender = genderProp.GetString(),
-                    Income = income
-                };
                 var createdCustomer = await _customerServices.CreateCustomerAsync(dto);
-                return CreatedAtAction(nameof(CreateCustomer), new { id = createdCustomer.Id }, createdCustomer);
+                var response = new { id = createdCustomer.Id, dto.Name, dto.DateOfBirth, dto.Gender, dto.Income };
+                return CreatedAtAction(nameof(GetCustomerById), new { id = createdCustomer.Id }, response);
             }
             catch (Exception ex)
             {
@@ -57,7 +42,8 @@ namespace BankWebApi.Api.Controllers
             var customer = await _customerServices.GetCustomerByIdAsync(id);
             if (customer == null)
                 return NotFound();
-            return Ok(customer);
+            var response = new { id = customer.Id, customer.Name, customer.DateOfBirth, customer.Gender, customer.Income };
+            return Ok(response);
         }
     }
 }

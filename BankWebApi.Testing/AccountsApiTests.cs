@@ -81,18 +81,18 @@ namespace BankWebApi.Testing
         public async Task CreateAndGetBalance_ShouldReturnCorrectBalance()
         {
             // Crear cliente primero
-            var customer = new { name = "Test User", dateOfBirth = "1990-01-01", gender = "Male", income = 10000 };
+            var customer = new { Name = "Test User", DateOfBirth = new DateTime(1990, 1, 1), Gender = "Male", Income = 10000m };
             var customerResp = await _client.PostAsJsonAsync("/api/customers", customer);
             customerResp.EnsureSuccessStatusCode();
             var customerJson = await customerResp.Content.ReadAsStringAsync();
-            var customerObj = JsonSerializer.Deserialize<JsonElement>(customerJson);
+            var customerObj = System.Text.Json.JsonDocument.Parse(customerJson).RootElement;
             var customerId = customerObj.GetProperty("id").GetInt32();
             // Crear cuenta
-            var account = new { customerId, accountNumber = "ACC100", balance = 500 };
+            var account = new { AccountNumber = "ACC100", ClientId = customerId, Balance = 500m, CreatedAt = DateTime.UtcNow };
             var accountResp = await _client.PostAsJsonAsync("/api/accounts", account);
             accountResp.EnsureSuccessStatusCode();
             var accountJson = await accountResp.Content.ReadAsStringAsync();
-            var accountObj = JsonSerializer.Deserialize<JsonElement>(accountJson);
+            var accountObj = System.Text.Json.JsonDocument.Parse(accountJson).RootElement;
             var accountNumber = accountObj.GetProperty("accountNumber").GetString();
             // Consultar saldo
             var balanceResp = await _client.GetAsync($"/api/accounts/balance/{accountNumber}");
