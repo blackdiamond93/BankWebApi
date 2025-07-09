@@ -5,10 +5,10 @@ using System.Net.Http.Json;
 
 namespace BankWebApi.Testing
 {
-    public class TransactionApiTests: IClassFixture<WebApplicationFactory<Program>>
+    public class TransactionApiTests: IClassFixture<CustomWebApplicationFactory>
     {
         private readonly HttpClient _client;
-        public TransactionApiTests(WebApplicationFactory<Program> factory)
+        public TransactionApiTests(CustomWebApplicationFactory factory)
         {
             _client = factory.CreateClient();
         }
