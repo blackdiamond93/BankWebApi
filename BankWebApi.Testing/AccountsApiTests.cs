@@ -40,7 +40,7 @@ namespace BankWebApi.Testing
        public async Task CreateAccount_DuplicateNumber_ShouldReturn409()
         {
             // Crear cliente primero
-            var customer = new { name = "Test User", dateOfBirth = "1990-01-01", gender = "Male", income = 10000 };
+            var customer = new { name = "Test User1", dateOfBirth = "1990-01-01", gender = "Male", income = 10000 };
             var customerResp = await _client.PostAsJsonAsync("/api/customers", customer);
             customerResp.EnsureSuccessStatusCode();
             var customerJson = await customerResp.Content.ReadAsStringAsync();
@@ -81,7 +81,8 @@ namespace BankWebApi.Testing
         public async Task CreateAndGetBalance_ShouldReturnCorrectBalance()
         {
             // Crear cliente primero
-            var customer = new { Name = "Test User", DateOfBirth = new DateTime(1990, 1, 1), Gender = "Male", Income = 10000m };
+            var uniqueName = $"Test User {Guid.NewGuid()}";
+            var customer = new { Name = uniqueName, DateOfBirth = new DateTime(1990, 1, 1), Gender = "Male", Income = 10000m };
             var customerResp = await _client.PostAsJsonAsync("/api/customers", customer);
             customerResp.EnsureSuccessStatusCode();
             var customerJson = await customerResp.Content.ReadAsStringAsync();

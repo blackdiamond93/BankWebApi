@@ -15,7 +15,8 @@ namespace BankWebApi.Testing
 
         private async Task<(int customerId, string accountNumber)> CreateCustomerAndAccount(decimal initialBalance = 50m)
         {
-            var customer = new { Name = "Test User", DateOfBirth = new DateTime(1990, 1, 1), Gender = "Male", Income = 10000m };
+            var uniqueName = $"Test User {Guid.NewGuid()}";
+            var customer = new { Name = uniqueName, DateOfBirth = new DateTime(1990, 1, 1), Gender = "Male", Income = 10000m };
             var customerResp = await _client.PostAsJsonAsync("/api/customers", customer);
             customerResp.EnsureSuccessStatusCode();
             var customerJson = await customerResp.Content.ReadAsStringAsync();
@@ -35,7 +36,7 @@ namespace BankWebApi.Testing
             var withdrawal = new
             {
                 AccountNumber = accountNumber,
-                TransactionType = 1, // Withdrawal
+                TransactionType = 1, 
                 Amount = 100m
             };
             var response = await _client.PostAsJsonAsync("/api/transactions/register", withdrawal);
@@ -49,26 +50,24 @@ namespace BankWebApi.Testing
             var deposit = new
             {
                 AccountNumber = accountNumber,
-                TransactionType = 0, // Deposit
+                TransactionType = 0,
                 Amount = 50m
             };
             var response = await _client.PostAsJsonAsync("/api/transactions/register", deposit);
             response.EnsureSuccessStatusCode();
-            // Now check balance
             var balanceResponse = await _client.GetAsync($"/api/accounts/balance/{accountNumber}");
             balanceResponse.EnsureSuccessStatusCode();
             var balanceJson = await balanceResponse.Content.ReadAsStringAsync();
-            Assert.Contains("100", balanceJson); // 50 inicial + 50 depósito
+            Assert.Contains("100", balanceJson); 
         }
 
         [Fact]
         public async Task GetTransactionHistory_ShouldReturnAllTransactions()
         {
             var (_, accountNumber) = await CreateCustomerAndAccount();
-            // Registrar un depósito y un retiro
-            var deposit = new { AccountNumber = accountNumber, TransactionType = 0, Amount = 50m }; // Deposit
+            var deposit = new { AccountNumber = accountNumber, TransactionType = 0, Amount = 50m }; 
             await _client.PostAsJsonAsync("/api/transactions/register", deposit);
-            var withdrawal = new { AccountNumber = accountNumber, TransactionType = 1, Amount = 20m }; // Withdrawal
+            var withdrawal = new { AccountNumber = accountNumber, TransactionType = 1, Amount = 20m };
             await _client.PostAsJsonAsync("/api/transactions/register", withdrawal);
             var response = await _client.GetAsync($"/api/transactions/history/{accountNumber}");
             response.EnsureSuccessStatusCode();

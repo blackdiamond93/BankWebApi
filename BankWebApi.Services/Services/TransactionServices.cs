@@ -29,12 +29,7 @@ namespace BankWebApi.Services.Services
 
             }).ToList();
 
-            var currentBalance = transactions
-                .Where(t => t.TransactionType == TransactionType.Deposit.ToString())
-                .Sum(t => t.Amount) - 
-                transactions
-                .Where(t => t.TransactionType == TransactionType.Withdrawal.ToString())
-                .Sum(t => t.Amount);
+            var currentBalance = await _accountService.GetBalanceByAccountNumberAsync(accountNumber);
 
             return new AccountSummaryDto
             {
@@ -44,29 +39,39 @@ namespace BankWebApi.Services.Services
             };
         }
 
-        public async Task<IEnumerable<Transaction>> GetHistoryByAccountAsync(string accountNumber)
+        public async Task<IEnumerable<TransactionSummaryDto>> GetHistoryByAccountAsync(string accountNumber)
         {
             var account = await _db.Accounts
                 .FirstOrDefaultAsync(a => a.AccountNumber == accountNumber)
-                    ?? throw new KeyNotFoundException("Account not found");
+                ?? throw new KeyNotFoundException("Account not found");
 
             return await _db.Transactions
                 .Where(t => t.AccountId == account.Id)
                 .OrderBy(t => t.TransactionDate)
+                .Select(t => new TransactionSummaryDto
+                {
+                    TransactionType = t.TransactionType,
+                    Amount = t.Amount,
+                    TransactionDate = t.TransactionDate,
+                    BalanceAfterTransaction = t.BalanceAfterTransaction
+                })
                 .ToListAsync();
         }
 
         public async Task<Transaction> RegisterTransactionAsync(string accountNumber, TransactionType type, decimal amount)
         {
-
             var account = await _db.Accounts
-          .FirstOrDefaultAsync(a => a.AccountNumber == accountNumber)
-          ?? throw new KeyNotFoundException("Account not found");
+                .FirstOrDefaultAsync(a => a.AccountNumber == accountNumber)
+                ?? throw new KeyNotFoundException("Account not found");
 
             var currentBalance = await _accountService.GetBalanceByAccountNumberAsync(accountNumber);
 
             if (type == TransactionType.Withdrawal && amount > currentBalance)
                 throw new InvalidOperationException("Insufficient funds");
+
+            var newBalance = type == TransactionType.Deposit
+                ? currentBalance + amount
+                : currentBalance - amount;
 
             var transaction = new Transaction
             {
@@ -74,16 +79,15 @@ namespace BankWebApi.Services.Services
                 TransactionType = type.ToString(),
                 Amount = amount,
                 TransactionDate = DateTime.UtcNow,
-                BalanceAfterTransaction = type == TransactionType.Deposit
-                                   ? currentBalance + amount
-                                   : currentBalance - amount
+                BalanceAfterTransaction = newBalance
             };
 
+            // Actualizar el balance de la cuenta
+            account.Balance = newBalance;
             _db.Transactions.Add(transaction);
             await _db.SaveChangesAsync();
 
             return transaction;
-        
         }
     }
 }

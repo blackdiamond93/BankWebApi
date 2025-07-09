@@ -13,5 +13,6 @@ namespace BankWebApi.Services.Services
         Task<Client> CreateCustomerAsync(CreateCustomerDto dto);
         Task<Client?> GetCustomerByIdAsync(int id);
         Task<bool> CustomerExistsAsync(int customerId);
+        Task<bool> CustomerExistsByDataAsync(CreateCustomerDto dto);
     }
 }

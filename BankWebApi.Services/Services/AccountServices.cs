@@ -45,14 +45,7 @@ namespace BankWebApi.Services.Services
                        .Include(c => c.Transactions)
                        .FirstOrDefaultAsync(c => c.AccountNumber == accountNumber)
                        ?? throw new KeyNotFoundException("Cuenta no encontrada");
-            decimal balance = cuenta.Balance + cuenta.Transactions
-                              .Where(t => t.TransactionType == "Deposit")
-                              .Sum(t => t.Amount) -
-                              cuenta.Transactions
-                              .Where(t => t.TransactionType == "Withdrawal")
-                              .Sum(t => t.Amount);
-
-            return balance;
+            return cuenta.Balance;
 
         }
 

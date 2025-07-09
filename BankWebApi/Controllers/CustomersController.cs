@@ -25,6 +25,8 @@ namespace BankWebApi.Api.Controllers
                 return BadRequest(ModelState);
             try
             {
+                if (await _customerServices.CustomerExistsByDataAsync(dto))
+                    return Conflict("A customer with the same data already exists.");
                 var createdCustomer = await _customerServices.CreateCustomerAsync(dto);
                 var response = new { id = createdCustomer.Id, dto.Name, dto.DateOfBirth, dto.Gender, dto.Income };
                 return CreatedAtAction(nameof(GetCustomerById), new { id = createdCustomer.Id }, response);

@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\accountsapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\accountsapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ECE16C45-3BCE-4047-92FD-5F6CFE4564B9}|BankWebApi.Models\\BankWebApi.Models.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.models\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECE16C45-3BCE-4047-92FD-5F6CFE4564B9}|BankWebApi.Models\\BankWebApi.Models.csproj|solutionrelative:bankwebapi.models\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\transactionapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\transactionapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.services\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|solutionrelative:bankwebapi.services\\services\\accountservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\transactionservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\transactionservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.services\\services\\customerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|solutionrelative:bankwebapi.services\\services\\customerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.services\\services\\transactionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|solutionrelative:bankwebapi.services\\services\\transactionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4114CD2F-AC37-451B-833B-655CB3645876}|BankWebApi\\BankWebApi.Api.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4114CD2F-AC37-451B-833B-655CB3645876}|BankWebApi\\BankWebApi.Api.csproj|solutionrelative:bankwebapi\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.services\\services\\itransactionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72763C0D-AF83-4636-BE13-B298700F70A3}|BankWebApi.Services\\BankWebApi.Services.csproj|solutionrelative:bankwebapi.services\\services\\itransactionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +42,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TransactionServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionServiceTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\TransactionServiceTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionServiceTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\TransactionServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TransactionType.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Models\\TransactionType.cs",
+              "RelativeDocumentMoniker": "BankWebApi.Models\\TransactionType.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Models\\TransactionType.cs",
+              "RelativeToolTip": "BankWebApi.Models\\TransactionType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:48.885Z",
+              "WhenOpened": "2025-07-09T04:40:50.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TransactionApiTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionApiTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\TransactionApiTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionApiTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\TransactionApiTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABBAAAAAAAAAA==",
+              "Title": "AccountServices.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\AccountServices.cs",
+              "RelativeDocumentMoniker": "BankWebApi.Services\\Services\\AccountServices.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\AccountServices.cs",
+              "RelativeToolTip": "BankWebApi.Services\\Services\\AccountServices.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:41.898Z",
+              "WhenOpened": "2025-07-09T04:39:06.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountsApiTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\AccountsApiTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\AccountsApiTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\AccountsApiTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\AccountsApiTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABUAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CustomerServices.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\CustomerServices.cs",
+              "RelativeDocumentMoniker": "BankWebApi.Services\\Services\\CustomerServices.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\CustomerServices.cs",
+              "RelativeToolTip": "BankWebApi.Services\\Services\\CustomerServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:35.327Z",
+              "WhenOpened": "2025-07-09T04:39:04.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ITransactionServices.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\ITransactionServices.cs",
+              "RelativeDocumentMoniker": "BankWebApi.Services\\Services\\ITransactionServices.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\ITransactionServices.cs",
+              "RelativeToolTip": "BankWebApi.Services\\Services\\ITransactionServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T04:35:22.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TransactionServices.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\TransactionServices.cs",
+              "RelativeDocumentMoniker": "BankWebApi.Services\\Services\\TransactionServices.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Services\\Services\\TransactionServices.cs",
+              "RelativeToolTip": "BankWebApi.Services\\Services\\TransactionServices.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowEIAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T04:24:05.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "BankWebApi\\Controllers\\CustomersController.cs",
+              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "BankWebApi\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwCEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T04:24:05.319Z",
               "EditorCaption": ""
             }
           ]

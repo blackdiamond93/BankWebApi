@@ -33,5 +33,14 @@ namespace BankWebApi.Services.Services
         {
             return await _context.Clients.AnyAsync(c => c.Id == customerId);
         }
+
+        public async Task<bool> CustomerExistsByDataAsync(CreateCustomerDto dto)
+        {
+            return await _context.Clients.AnyAsync(c =>
+                c.Name == dto.Name &&
+                c.DateOfBirth == dto.DateOfBirth &&
+                c.Gender == dto.Gender &&
+                c.Income == dto.Income);
+        }
     }
 }

@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\accountsapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\accountsapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\transactionapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\transactionapitests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|c:\\users\\jeff_\\source\\repos\\bankwebapi\\bankwebapi.testing\\transactionservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1442234C-8F0D-491F-A2F6-D20E99C1F4D8}|BankWebApi.Testing\\BankWebApi.Testing.csproj|solutionrelative:bankwebapi.testing\\transactionservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TransactionServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionServiceTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\TransactionServiceTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionServiceTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\TransactionServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:48.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransactionApiTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionApiTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\TransactionApiTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\TransactionApiTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\TransactionApiTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:41.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountsApiTests.cs",
-              "DocumentMoniker": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\AccountsApiTests.cs",
-              "RelativeDocumentMoniker": "BankWebApi.Testing\\AccountsApiTests.cs",
-              "ToolTip": "C:\\Users\\jeff_\\source\\repos\\BankWebApi\\BankWebApi.Testing\\AccountsApiTests.cs",
-              "RelativeToolTip": "BankWebApi.Testing\\AccountsApiTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T03:51:35.327Z",
-              "EditorCaption": ""
             }
           ]
         }

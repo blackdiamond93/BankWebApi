@@ -1,8 +1,6 @@
 ﻿using BankWebApi.Models.DTOs;
 using BankWebApi.Services.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using BankWebApi.Models;
 
 namespace BankWebApi.Api.Controllers
 {
