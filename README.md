@@ -58,16 +58,74 @@ BankWebApi es una API RESTful desarrollada en .NET 8 que simula las operaciones 
 
 ### Clientes
 - `POST /api/customers` — Crear un nuevo cliente.
+  - **Body:**
+    ```json
+    {
+      "name": "string",
+      "dateOfBirth": "yyyy-MM-dd",
+      "gender": "string",
+      "income": decimal
+    }
+    ```
+  - **Respuestas:**
+    - 201 Created: Cliente creado
+    - 400 Bad Request: Datos inválidos
+    - 409 Conflict: Cliente ya existe
+- `GET /api/customers/{id}` — Obtener cliente por ID.
+  - **Respuestas:**
+    - 200 OK: Datos del cliente
+    - 404 Not Found: No existe
 
 ### Cuentas
 - `POST /api/accounts` — Crear una nueva cuenta bancaria.
+  - **Body:**
+    ```json
+    {
+      "accountNumber": "string",
+      "clientId": int,
+      "balance": decimal,
+      "createdAt": "yyyy-MM-ddTHH:mm:ss"
+    }
+    ```
+  - **Respuestas:**
+    - 201 Created: Cuenta creada
+    - 400 Bad Request: Datos inválidos
+    - 409 Conflict: Número de cuenta ya existe
+    - 404 Not Found: Cliente no existe
 - `GET /api/accounts/balance/{accountNumber}` — Consultar el saldo de una cuenta.
+  - **Respuestas:**
+    - 200 OK: Saldo actual
+    - 404 Not Found: Cuenta no existe
 - `POST /api/accounts/apply-interest/{accountNumber}?annualRate={rate}` — Aplicar interés a una cuenta.
+  - **Parámetros:**
+    - `annualRate`: decimal (tasa anual)
+  - **Respuestas:**
+    - 200 OK: Interés aplicado
+    - 404 Not Found: Cuenta no existe
 
 ### Transacciones
 - `POST /api/transactions/register` — Registrar una transacción (depósito o retiro).
+  - **Body:**
+    ```json
+    {
+      "accountNumber": "string",
+      "transactionType": 0, // 0=Deposit, 1=Withdrawal
+      "amount": decimal
+    }
+    ```
+  - **Respuestas:**
+    - 201 Created: Transacción registrada
+    - 400 Bad Request: Datos inválidos
+    - 404 Not Found: Cuenta no existe
+    - 422 Unprocessable Entity: Fondos insuficientes
 - `GET /api/transactions/history/{accountNumber}` — Obtener el historial de transacciones de una cuenta.
+  - **Respuestas:**
+    - 200 OK: Lista de transacciones
+    - 404 Not Found: Cuenta no existe
 - `GET /api/transactions/summary/{accountNumber}` — Obtener el resumen de transacciones y balance actual de una cuenta.
+  - **Respuestas:**
+    - 200 OK: Resumen de movimientos y saldo
+    - 404 Not Found: Cuenta no existe
 
 ## Pruebas
 Para ejecutar las pruebas automatizadas:
